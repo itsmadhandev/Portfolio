@@ -56,39 +56,5 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Add fade-in animation styles dynamically
-const style = document.createElement('style');
-style.textContent = `
-    section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    
-    section.fade-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .nav-links a.active {
-        color: var(--primary-color);
-        position: relative;
-    }
-    
-    .nav-links a.active::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background-color: var(--primary-color);
-    }
-`;
-document.head.appendChild(style);
-
 // Show hero section immediately
 document.querySelector('#hero').classList.add('fade-in');
-
-// Mobile menu toggle (for future enhancement)
-console.log('Portfolio website loaded successfully!');
